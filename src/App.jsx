@@ -52,7 +52,6 @@ const App = () => {
           <li key={index}>
             <strong>{country.Name}</strong> - Life Expectancy:
             {country.LifeExpectancy}
-            {country.LifeExpectancy}
           </li>
         ))}
       </ul>
