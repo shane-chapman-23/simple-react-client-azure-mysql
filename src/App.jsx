@@ -50,7 +50,8 @@ const App = () => {
       <ul>
         {countries.map((country, index) => (
           <li key={index}>
-            <strong>{country.Name}</strong> - Life Expectancy:{" "}
+            <strong>{country.Name}</strong> - Life Expectancy:
+            {country.LifeExpectancy}
             {country.LifeExpectancy}
           </li>
         ))}
