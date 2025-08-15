@@ -41,8 +41,6 @@ const App = () => {
     displayOceaniaCountries();
   }, []);
 
-  console.log(countries);
-
   return (
     <div>
       <h1>Oceania Countries</h1>
