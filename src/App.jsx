@@ -1,10 +1,10 @@
 // Import required modules
-import { useEffect, useState } from 'react';
-import axios from 'axios';
+import {useEffect, useState} from "react";
+import axios from "axios";
 
 // Get the API_HOST from the .env file using Vite https://vite.dev/guide/env-and-mode#env-variables
 const API_HOST = import.meta.env.VITE_API_HOST;
-console.log('API_HOST:', API_HOST);
+console.log("API_HOST:", API_HOST);
 
 // Define the App component
 const App = () => {
@@ -17,8 +17,8 @@ const App = () => {
       const response = await axios.get(`${API_HOST}/oceania`);
       return response.data;
     } catch (error) {
-      console.error('Error fetching Oceania countries:', error.message);
-      throw new Error('Failed to fetch Oceania countries');
+      console.error("Error fetching Oceania countries:", error.message);
+      throw new Error("Failed to fetch Oceania countries");
     }
   };
 
@@ -30,16 +30,18 @@ const App = () => {
         if (fetchedCountries && fetchedCountries.length > 0) {
           setCountries(fetchedCountries);
         } else {
-          setError('No countries found for Oceania.');
+          setError("No countries found for Oceania.");
         }
       } catch (error) {
-        console.log('Error displaying Oceania countries:', error);
-        setError('Failed to display Oceania countries.');
+        console.log("Error displaying Oceania countries:", error);
+        setError("Failed to display Oceania countries.");
       }
     };
 
     displayOceaniaCountries();
   }, []);
+
+  console.log(countries);
 
   return (
     <div>
@@ -48,7 +50,8 @@ const App = () => {
       <ul>
         {countries.map((country, index) => (
           <li key={index}>
-            <strong>{country.Name}</strong> - Life Expectancy: {country.LifeExpectancy}
+            <strong>{country.Name}</strong> - Life Expectancy:{" "}
+            {country.LifeExpectancy}
           </li>
         ))}
       </ul>
